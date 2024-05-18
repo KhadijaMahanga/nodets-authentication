@@ -1,0 +1,11 @@
+{
+  "name": "user-authentication",
+  "version": "1.0.0",
+  "description": "A simple app for user authentication using credentials and google login",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khadija Mahanga",
+  "license": "ISC"
+}
