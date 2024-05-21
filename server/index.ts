@@ -18,11 +18,6 @@ app.get("/", (req: Request, res: Response) => {
   return res.status(200).send({ message: `User Authentication API` })
 })
 
-try {
-  
-} catch (error: any) {
-    console.log(`Error occurred: ${error.message}`)
-}
 
 const start = async (): Promise<void> => {
   try {

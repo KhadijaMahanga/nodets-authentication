@@ -6,7 +6,6 @@ type DbConnection = {
 	user: string;
 	password: string;
 	database: string;
-	dbLogging: boolean;
 };
 
 const connection: DbConnection = {
@@ -14,9 +13,7 @@ const connection: DbConnection = {
 	port: db_port,
 	user: db_user,
 	password: db_password,
-	database:db_name,
-	dbLogging:
-		node_env === 'development' || log === 'true',
+	database: db_name
 };
 
 export default connection;
