@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  db:
+    container_name: postgres_
+    image: postgres
+    ports:
+      - '5433:${DB_PORT}'
+    volumes:
+      - data:/data/db
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+  server:
+    build:
+        context: ./server
+        dockerfile: Dockerfile
+    container_name: server_app
+    restart: always
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on:
+      - db
+    volumes:
+    - ./server:/app 
+    - /app/node_modules 
+
+  client:
+    build:
+        context: ./client
+        dockerfile: Dockerfile
+    container_name: client_
+    restart: always
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+    volumes:
+    - ./client:/app 
+    - /app/node_modules 
+
+volumes: 
+ data: {}

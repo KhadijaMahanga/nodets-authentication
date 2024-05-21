@@ -28,7 +28,7 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Open the port for the nginx server
-EXPOSE 80
+EXPOSE 3000
 # Run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
 
@@ -37,7 +37,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 FROM builder AS dev
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["npm", "start"]
 
