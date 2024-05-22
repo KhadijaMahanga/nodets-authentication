@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "sequelize": "^6.37.3",
-    "typescript-eslint-parser": "^22.0.0"
-  },
-  "devDependencies": {
-    "sequelize-cli": "^6.6.2"
-  }
-}
