@@ -18,7 +18,7 @@ const User = sequelizeConnection.define('User', {
   password: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-});
+  }
+}, { timestamps: true });
 
 export default User;

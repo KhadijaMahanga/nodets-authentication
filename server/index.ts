@@ -5,6 +5,7 @@ import helmet from 'helmet';
 
 import { port } from './config';
 import sequelizeConnection from './database';
+import router from './routes';
 
 // New Express application
 const app: Express = express();
@@ -13,6 +14,8 @@ const app: Express = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
+app.use(router);
 
 app.get('/', (req: Request, res: Response) => {
   return res.status(200).send({ message: `User Authentication API` });
