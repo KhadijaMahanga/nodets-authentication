@@ -15,3 +15,4 @@ export const db_password: string = String(process.env.DB_PASSWORD);
 
 export const node_env = process.env.NODE_ENV;
 export const log = process.env.LOG;
+export const jwr_secret = process.env.JWT_SECRET;
