@@ -1,4 +1,4 @@
-import { db_host, db_name, db_password, db_port, db_user } from '../../config';
+import { db_host, db_name, db_password, db_port, db_user } from '../../../config';
 
 type DbConnection = {
   host: string;

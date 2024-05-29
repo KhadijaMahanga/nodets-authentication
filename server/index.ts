@@ -4,8 +4,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 
 import { port } from './config';
-import sequelizeConnection from './database';
-import router from './routes';
+import sequelizeConnection from './src/database';
+import router from './src/routes';
 
 // New Express application
 const app: Express = express();

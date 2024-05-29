@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --pretty --transpile-only index.ts",
-    "lint": "eslint *.ts --fix",
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
+    "lint": "eslint src/*ts --fix",
     "start": "tsc && npm run dev",
     "format": "prettier --write .",
     "prepare": "husky install"

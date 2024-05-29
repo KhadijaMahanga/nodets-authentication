@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { DataTypes, Model, InferAttributes, InferCreationAttributes, CreationOptional, NonAttribute } from 'sequelize';
 
 import sequelizeConnection from '..';
-import { jwr_secret } from '../../config';
+import { jwr_secret } from '../../../config';
 
 const SALT_ROUNDS = 12;
 
