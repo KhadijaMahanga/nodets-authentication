@@ -1,9 +1,5 @@
-import { Sequelize } from 'sequelize';
-import connection from './config';
+import { PrismaClient } from "@prisma/client";
 
-const { database, user, password, host, port } = connection;
+const prisma = new PrismaClient();
 
-// create a sequalize connection
-const sequelizeConnection = new Sequelize(`postgres://${user}:${password}@${host}:${port}/${database}`);
-
-export default sequelizeConnection;
+export default prisma

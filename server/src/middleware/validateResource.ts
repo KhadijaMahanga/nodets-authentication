@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { AnyZodObject } from "zod";
+import { AnyZodObject, z } from "zod";
 
 const validResource = (schema: AnyZodObject) => (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -10,7 +10,14 @@ const validResource = (schema: AnyZodObject) => (req: Request, res: Response, ne
         });
         next();
     } catch (e: any) {
-        return res.sendStatus(400).send(e.error);
+        let err = e;
+        if (e instanceof z.ZodError) {
+            err = err.issues.map((i: any) => ({ path: i.path[0], message: i.message}))
+        }
+        return res.sendStatus(400).json({ 
+            status: 'failed',
+            error: err 
+        });
     }
      
 }
