@@ -47,14 +47,14 @@ export const createUserSchema = object({
         }
 
     }),
-  }).extend({
     passwordConfirmation: string({
         required_error: 'Password confirmation is required',
-      }),
-}).refine((data) => data.password === data.passwordConfirmation, {
+    })
+  }).refine((data:any) => data.password === data.passwordConfirmation, {
     message: 'Passwords do no match',
     path: ['passwordConfirmation'],
-}),
+  })
 });
+  
 
-export type CreateUserInput = TypeOf<typeof createUserSchema>['body'];
+export type CreateUserInput = Omit<TypeOf<typeof createUserSchema>['body'], "passwordConfirmation">;
