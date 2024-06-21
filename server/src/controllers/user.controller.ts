@@ -10,7 +10,7 @@ export async function createUserHandler(req: Request<{}, {}, CreateUserInput>, r
     try{
         const user = await createUser(body);
         //TODO: Send verification link
-        return res.send("User created successfully")
+        return res.status(200).json({ user });
 
     } catch (e: any) {
         if (e.code === 11000) {
